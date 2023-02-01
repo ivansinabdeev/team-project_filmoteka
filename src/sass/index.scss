@@ -1,7 +1,17 @@
 @import './utils/variables';
+@import './common';
 @import './utils/mixins';
 @import './utils/visually-hidden';
-@import './utils/spiner';
 
 @import './base/global';
 @import './base/container';
+
+@import './commponents/button';
+@import './commponents/modal-film';
+@import './commponents/modal-film';
+@import './commponents/modal-footer';
+@import './commponents/pagination';
+@import './commponents/films';
+
+@import './layout/header';
+@import './layout/footer';
