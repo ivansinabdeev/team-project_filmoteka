@@ -1,0 +1,23 @@
+:root {
+  //  Fonts
+  --fontFamily: Roboto, sans-serif;
+
+  //  Accent color
+  --accentBtnColor: #ff6b02;
+  --accentTextColor: #ff6b08;
+  --notificationTextColor: #ff001b;
+
+  // Text color
+  --primaryTextDark: #000000;
+  --primaryTextLight: #ffffff;
+  --secondaryTextColor: #545454;
+  --secondaryTextDetailsColor: #8c8c8c;
+
+  // BG color
+  --primaryLightThemeBgColor: #ffffff;
+  --secondaryLightThemeBgColor: #f7f7f7;
+  --headerGradientColor: rgba(0, 0, 0, 0.56);
+
+  // TimingFunction
+  --timingFunction: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
