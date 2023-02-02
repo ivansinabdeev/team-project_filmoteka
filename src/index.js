@@ -1,1 +1,2 @@
-import './js/modal-footer'
+import './js/modal-footer';
+import './js/pagination';
