@@ -28,7 +28,16 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }

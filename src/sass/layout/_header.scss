@@ -1,50 +1,13 @@
-.header {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    max-width: 100%;
-    min-height: 230px;
-
-    background-color: rgba(0, 0, 0, 0.56);
-    background-color: #10181D;
-
-    background-image: url('../images/mobile/header-left@1x.png'), url('../images/mobile/header-right@1x.png');
-    background-size: cover;
-    
-    @include retina-bgi {
-        background-image: url('../images/mobile/header-left@2x.png'), url('../images/mobile/header-right@2x.png');
-    }
-
-    @include tablet {
-    padding-top: 40px;
-    padding-bottom: 44px;
-    height: 216px;
-
-    background-image: url('../images/tablet/header-left@1x.png'), url('../images/tablet/header-right@1x.png');
-
-        @include retina-bgi {
-            background-image: url('../images/tablet/header-left@2x.png'), url('../images/tablet/header-right@2x.png');
-        }
-    }
-
-    @include desktop {
-        background-image: url('../images/desktop/header-left@1x.png'), url('../images/desktop/header-right@1x.png');
-
-        @include retina-bgi {
-            background-image: url('../images/desktop/header-left@2x.png'), url('../images/desktop/header-right@2x.png');
-        }
-    }
-}
-
 .header-container {
     padding-left: 20px;
     padding-right: 20px;
     max-width: 1280px;
     margin: 0 auto;
 
-        @include tablet {
-            padding-left: 32px;
-            padding-right: 32px;
-        }
+    @include tablet {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 }
 
 .header__nav {
@@ -53,7 +16,7 @@
     align-items: center;
 
     width: 100%;
-    margin-bottom: 17px;
+    margin-bottom: 40px;
 }
 
 .logo__link {
@@ -68,7 +31,7 @@
     }
 }
 
-.logo__icon {    
+.logo__icon {
     @include tablet {
         margin-right: 8px;
     }
@@ -144,65 +107,4 @@
 .no-current:hover,
 .no-current:focus {
     color: var(--accentTextColor);
-}
-
-.header__form {
-    max-width: 336px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto 16px;
-    border-bottom: 0.5px solid var(--primaryTextLight);
-
-    transition: all var(--timingFunction);
-
-    @include tablet {
-        margin: 0 auto 20px;
-    }
-
-    @include desktop {
-        max-width: 394px;
-    }
-
-    &:has(.header__input:focus) {
-        border-bottom: 0.5px solid var(--accentTextColor);
-    }
-}
-
-.header__input {
-    border-style: none;
-    background-color: transparent;
-    width: 100%;
-    outline: none;
-    color: var(--primaryTextLight);
-
-    &::placeholder {
-        font-size: 14px;
-        line-height: 1.14;
-
-        color: var(--primaryTextLight);
-    }
-}
-
-.submit__button {
-    height: 20px;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    border: none;
-    background: none;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.submit__button:hover .submit__icon,
-.submit__button:focus .submit__icon {
-    color: var(--accentTextColor);
-}
-
-.submit__icon {
-    color: var(--primaryTextLight);
-
-    transition: all var(--timingFunction);
 }
