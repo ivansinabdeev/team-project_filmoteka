@@ -18,8 +18,14 @@
     "url": "https://github.com/goitacademy/filmoteka/issues"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "basiclightbox": "^5.0.4",
+    "firebase": "^9.17.0",
+    "modern-normalize": "^1.1.0"
+=======
     "modern-normalize": "^1.1.0",
     "spin.js": "^4.1.1"
+>>>>>>> 498c55d0a9c8ea20a4fa2c101c2b185809694dce
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

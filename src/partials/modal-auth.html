@@ -1,0 +1,66 @@
+<div class="modal-auth modal modal1" data-modal="1">
+    <div class="modal-auth__container">
+        <div class="modal-auth__box-line">
+            <ul class="modal-auth__list">
+                <li><button class="modal-auth__btn sing-in " tupe="button">
+                        SING IN
+                    </button></li>
+                <li><button class="modal-auth__btn registr" type="button">
+                        REGISTRATION
+                    </button></li>
+            </ul>
+        </div>
+        <form class="auth-form">
+            <label for="name">
+                <input class="auth-form__input auth-form__input-name" type="text" type="name" name="username"
+                    placeholder="name" required hidden>
+            </label>
+            <label for="email">
+                <input class="auth-form__input auth-form__input-email" type="email" name="email" placeholder="e-mail"
+                    required />
+            </label>
+
+            <label for="password">
+                <input class="auth-form__input auth-form__input-password " type="password" name="password" minlength="6"
+                    maxlength="10" placeholder="password" required />
+                <svg class="icon-eye show-pswd hidden-tab" width="28" height="28">
+                    <use href="./images/symbol-defs.svg#icon-eye"></use>
+                </svg>
+                <svg class="icon-eye hide-pswd" width="20" height="20">
+                    <use href="./images/symbol-defs.svg#icon-eye-blocked"></use>
+                </svg>
+            </label>
+
+
+            <p class="auth-form__text" hidden>
+                By clicking Registration button, you are indicating that you have read
+                and agree to the
+                <a class="auth-form__link" href="https://www.google.com.ua/">Terms of Use</a>
+                and
+                <a class="auth-form__link" href="https://www.google.com.ua/">Privacy Policy</a>.
+            </p>
+            <button class="auth-form__button btn-accent" type="submit">
+                Sign In
+            </button>
+        </form>
+        <div class="auth-form__autorization">
+            <button class="auth-form__button-google " aria-label="sign in with google" type="button">
+                <svg width="25" height="25">
+                    <use href="./images/symbol-defs.svg#icon-google"></use>
+                </svg>
+                &nbspSign in with Goodle
+            </button>
+        </div>
+        <button class="modal-auth__btn-close js-modal-close" type="button">
+            <svg width="20" height="20">
+                <use href="./images/symbol-defs.svg#icon-close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- <button type="button" class=" js-open-modal" data-modal="1">
+   
+</button> -->
+
+<!-- vaf vaf -->
