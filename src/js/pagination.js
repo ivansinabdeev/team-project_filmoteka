@@ -1,9 +1,244 @@
+import  getFilm  from './api/getFilm';
+
+const element = document.querySelector(".pagination ul");
+let totalPages = 20;
+let page = 5;
+//виклик функції з передачею параметрів і додаванням внутрішнього елемента, який є тегом ul
+element.innerHTML = createPagination(totalPages, page);
+function createPagination(totalPages, page){
+  let liTag = '';
+  let active;
+  let beforePage = page - 1;
+  let afterPage = page + 1;
+  if(page > 1){ //показати наступну кнопку, якщо значення сторінки більше 1
+    liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+  }
+  if(page > 2){ //якщо значення сторінки менше 2, додайте 1 після попередньої кнопки
+    liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
+    if(page > 3){ //якщо значення сторінки більше 3, додайте це (...) після першої li або сторінки
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+  // скільки сторінок або li відображається перед поточним li
+  if (page == totalPages) {
+    beforePage = beforePage - 2;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage - 1;
+  }
+   // скільки сторінок або li відображається після поточного li
+  if (page == 1) {
+    afterPage = afterPage + 2;
+  } else if (page == 2) {
+    afterPage  = afterPage + 1;
+  }
+  for (var plength = beforePage; plength <= afterPage; plength++) {
+    if (plength > totalPages) { //якщо довжина перевищує загальну довжину сторінки, продовжуй
+      continue;
+    }
+    if (plength == 0) { //якщо довжина дорівнює 0, додайте +1 до значення довжини
+      plength = plength + 1;
+    }
+    if(page == plength){ //якщо сторінка дорівнює довжині, признач активний рядок в активній змінній
+      active = "active";
+    }else{ //інакше залиш порожнім активну змінну
+      active = "";
+    }
+    liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
+  }
+  if(page < totalPages - 1){ //якщо значення сторінки менше значення totalPage на -1, тоді показується остання li або сторінка
+    if(page < totalPages - 2){ //якщо значення сторінки менше значення totalPage на -2, додайте це (...) перед останньою сторінкою li
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
+  }
+  if (page < totalPages) { //показати наступну кнопку, якщо значення сторінки менше totalPage(20)
+    liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+  }
+  element.innerHTML = liTag; //додай тег li в тег ul
+  return liTag; 
+  
+
+}
+getFilm().then(res => {
+  totalPages = res.total_pages;
+  createPagination(totalPages, 5);
+})
 
 
 
 
 
 
+// const ulTag = document.querySelector('.pagination ul');
+// let totalPages = 20;
+// // let page = 10;
+
+// export default {
+//     addPaginationList(totalHits, activePage) {
+
+//         if (!totalHits || totalHits <= getFilm.perPage) {
+//             refs.paginationBox.classList.add('is-hidden');
+//             return;
+//         }
+
+//         totalPages =
+//             totalHits /  getFilm.perPage <= limit
+//                 ? Math.ceil(totalHits /  getFilm.perPage)
+//                 : limit;
+
+//         if (!totalHits) return;
+//         let arrayPagination;
+
+//         if (totalPages <= 5) {
+//             numberOfPagesPagination = totalPages;
+//         } else {
+//             if (document.body.clientWidth < screenWidth) {
+//                 numberOfPagesPagination = 5;
+//             } else {
+//                 numberOfPagesPagination = 9;
+//             }
+//         }
+//         if (document.body.clientWidth < screenWidth) {
+//             arrayPagination = createArrayPaginationMobile(
+//                 totalPages <= 5 ? totalPages : numberOfPagesPagination,
+//                 activePage,
+//                 totalPages,
+//             );
+//         } else {
+//             arrayPagination = createArrayPagination(
+//                 totalPages <= 9 ? totalPages : numberOfPagesPagination,
+//                 activePage,
+//                 totalPages,
+//             );
+//         }
+
+        // refs.paginationBox.classList.remove('is-hidden');
+        // refs.paginationList.innerHTML = '';
+        // refs.paginationList.insertAdjacentHTML(
+        //     'beforeend',
+        //     paginationList(arrayPagination),
+        // );
+    // },
+
+    // getActivePageForFetch(eventTarget) {
+    //     let activePage = +refs.paginationBox.querySelector('.active').textContent;
+
+    //     if (eventTarget.classList.contains('prev')) {
+    //         return activePage > 1 ? activePage - 1 : 1;
+    //     }
+    //     if (eventTarget.classList.contains('next')) {
+    //         return activePage < totalPages ? activePage + 1 : totalPages;
+    //     }
+    //     return +eventTarget.textContent;
+    // },
+
+    // getSettingForFetch(activePage) {
+    //     let resultArray = [];
+    //     const perPage =  getFilm.perPage;
+
+    //     let itemEnd = activePage * perPage;
+    //     let itemStart = itemEnd - perPage + 1;
+
+    //     const currentPage = Math.floor(itemStart / FETCH) + 1;
+
+    //     const currentNumStart =
+    //         itemStart % FETCH ? (itemStart % FETCH) - 1 : FETCH - 1;
+
+    //     let currentNumEnd = currentNumStart + perPage;
+
+    //     if (currentNumEnd < FETCH) {
+    //         resultArray = [
+    //             { page: currentPage, numStart: currentNumStart, numEnd: currentNumEnd },
+    //         ];
+    //         return resultArray;
+    //     }
+
+    //     else {
+    //         resultArray = [
+    //             { page: currentPage, numStart: currentNumStart, numEnd: undefined },
+    //         ];
+    //         if (FETCH - currentNumStart === perPage) {
+    //             return resultArray;
+    //         }
+    //     }
+
+    //     const nextPage = currentPage + 1;
+    //     const nextNumStart = 0;
+    //     const nextNumEnd = perPage - (FETCH - currentNumStart);
+
+    //     resultArray = [
+    //         ...resultArray,
+    //         { page: nextPage, numStart: nextNumStart, numEnd: nextNumEnd },
+    //     ];
+    //     return resultArray;
+    // },
+
+    // getActivePage() {
+    //     return +refs.paginationBox.querySelector('.active').textContent;
+    // },
+// };
+
+
+// //виклик функції з передачею параметрів і додаванням внутрішнього елемента, який є тегом ul
+// element.innerHTML = createPagination(totalPages, page);
+// function createPagination(totalPages, page){
+//     let liTag = '';
+//     let active;
+//     let beforePages = page - 1;
+//     let afterPages = page + 1;
+
+//     if (page > 1){//показати наступну кнопку, якщо значення сторінки більше 1
+//         liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+//     }
+//     if (page > 2){//якщо значення сторінки менше 2, додайте 1 після попередньої кнопки
+//         liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
+//         if (page >3){ //якщо значення сторінки більше 3, додайте це (...) після першої li або сторінки
+//             liTag += `<li class="dots"><span>...</span></li>`;
+//         }
+//     }
+//     // скільки сторінок або li відображається перед поточним li
+//     if (page == totalPages){
+//         beforePages = beforePages - 2;
+//     }else if(page == totalPages - 1){
+//         beforePages = beforePages - 1;
+//     }
+     
+//     // скільки сторінок або li відображається після поточного li
+//     if (page == 1){
+//         afterPages = afterPages + 2;
+//     }else if(page == 2){
+//         afterPages = afterPages + 1;
+//     }
+
+//     for (let pageLength = beforePages; pageLength <= afterPages; pageLength++){
+//         if (pageLength > totalPages){//якщо довжина перевищує загальну довжину сторінки, продовжуй
+//             continue;
+//         }
+//         if (pageLength == 0){//якщо довжина дорівнює 0, додайте +1 до значення довжини
+//             pageLength = pageLength + 1
+//         }
+//         if (page == pageLength){//якщо сторінка дорівнює довжині, признач активний рядок в активній змінній
+//             active = "active";
+//         }else{//інакше залиш порожнім активну змінну
+//             active = "";
+//         }
+//         liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${pageLength})"><span>${pageLength}</span></li>`;
+//     }
+
+//     if (page < totalPages - 1){//якщо значення сторінки менше значення totalPage на -1, тоді показується остання li або сторінка
+//         if (page < totalPages - 2){  //якщо значення сторінки менше значення totalPage на -2, додайте це (...) перед останньою сторінкою li    
+//             liTag += `<li class="dots"><span>...</span></li>`;
+//         }
+//         liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
+//     }
+
+//     if (page < totalPages){//показати наступну кнопку, якщо значення сторінки менше totalPage(20)
+//         liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+//     }
+//     element.innerHTML = liTag;
+//     return liTag;
+// }
+// // // element(totalPages, 5);
 
 
 
@@ -23,7 +258,7 @@
 //     let rows = 7;
   
 //     function displayList(arrData, rowPerPage, page) {
-//       const postsEl = document.querySelector('.posts');
+//       const postsEl = document.querySelector('.films');
 //       postsEl.innerHTML = "";
 //       page--;
   
@@ -33,7 +268,7 @@
   
 //       paginatedData.forEach((el) => {
 //         const postEl = document.createElement("div");
-//         postEl.classList.add("post");
+//         postEl.classList.add("film");
 //         postEl.innerText = `${el.title}`;
 //         postsEl.appendChild(postEl);
 //       })
