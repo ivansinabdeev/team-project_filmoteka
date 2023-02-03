@@ -9,7 +9,7 @@ export async function getFilm(query, page = 1, lang) {
     url.searchParams.set('page', page);
     url.searchParams.set('query', query);
     url.searchParams.set('language', lang);
-    url.searchParams.set('sort_by', sortBy);
+    // url.searchParams.set('sort_by', sortBy);
 
     try {
         const response = await fetch(url);
