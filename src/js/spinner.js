@@ -8,7 +8,7 @@ window.onload = function () {
 
 //===================== ORANGE SPINNER ASYNC =============//
 
-import { Spinner } from 'spin.js';
+// import { Spinner } from 'spin.js';
 
 const opts = {
   lines: 13, // The number of lines to draw
