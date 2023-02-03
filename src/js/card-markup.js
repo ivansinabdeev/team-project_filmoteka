@@ -35,3 +35,4 @@ export function markupFilm(films) {
         .join('');
     galleryEl.insertAdjacentHTML('beforeend', markup);
 }
+// 
