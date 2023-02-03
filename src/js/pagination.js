@@ -1,8 +1,110 @@
 
 
 
+// export default {
+//     addPaginationList(totalHits, activePage) {
 
+//         if (!totalHits || totalHits <= getFilm.perPage) {
+//             refs.paginationBox.classList.add('is-hidden');
+//             return;
+//         }
 
+//         totalPages =
+//             totalHits /  getFilm.perPage <= limit
+//                 ? Math.ceil(totalHits /  getFilm.perPage)
+//                 : limit;
+
+//         if (!totalHits) return;
+//         let arrayPagination;
+
+//         if (totalPages <= 5) {
+//             numberOfPagesPagination = totalPages;
+//         } else {
+//             if (document.body.clientWidth < screenWidth) {
+//                 numberOfPagesPagination = 5;
+//             } else {
+//                 numberOfPagesPagination = 9;
+//             }
+//         }
+//         if (document.body.clientWidth < screenWidth) {
+//             arrayPagination = createArrayPaginationMobile(
+//                 totalPages <= 5 ? totalPages : numberOfPagesPagination,
+//                 activePage,
+//                 totalPages,
+//             );
+//         } else {
+//             arrayPagination = createArrayPagination(
+//                 totalPages <= 9 ? totalPages : numberOfPagesPagination,
+//                 activePage,
+//                 totalPages,
+//             );
+//         }
+
+        // refs.paginationBox.classList.remove('is-hidden');
+        // refs.paginationList.innerHTML = '';
+        // refs.paginationList.insertAdjacentHTML(
+        //     'beforeend',
+        //     paginationList(arrayPagination),
+        // );
+    // },
+
+    // getActivePageForFetch(eventTarget) {
+    //     let activePage = +refs.paginationBox.querySelector('.active').textContent;
+
+    //     if (eventTarget.classList.contains('prev')) {
+    //         return activePage > 1 ? activePage - 1 : 1;
+    //     }
+    //     if (eventTarget.classList.contains('next')) {
+    //         return activePage < totalPages ? activePage + 1 : totalPages;
+    //     }
+    //     return +eventTarget.textContent;
+    // },
+
+    // getSettingForFetch(activePage) {
+    //     let resultArray = [];
+    //     const perPage =  getFilm.perPage;
+
+    //     let itemEnd = activePage * perPage;
+    //     let itemStart = itemEnd - perPage + 1;
+
+    //     const currentPage = Math.floor(itemStart / FETCH) + 1;
+
+    //     const currentNumStart =
+    //         itemStart % FETCH ? (itemStart % FETCH) - 1 : FETCH - 1;
+
+    //     let currentNumEnd = currentNumStart + perPage;
+
+    //     if (currentNumEnd < FETCH) {
+    //         resultArray = [
+    //             { page: currentPage, numStart: currentNumStart, numEnd: currentNumEnd },
+    //         ];
+    //         return resultArray;
+    //     }
+
+    //     else {
+    //         resultArray = [
+    //             { page: currentPage, numStart: currentNumStart, numEnd: undefined },
+    //         ];
+    //         if (FETCH - currentNumStart === perPage) {
+    //             return resultArray;
+    //         }
+    //     }
+
+    //     const nextPage = currentPage + 1;
+    //     const nextNumStart = 0;
+    //     const nextNumEnd = perPage - (FETCH - currentNumStart);
+
+    //     resultArray = [
+    //         ...resultArray,
+    //         { page: nextPage, numStart: nextNumStart, numEnd: nextNumEnd },
+    //     ];
+    //     return resultArray;
+    // },
+
+    // getActivePage() {
+    //     return +refs.paginationBox.querySelector('.active').textContent;
+    // },
+// };
 
 
 
