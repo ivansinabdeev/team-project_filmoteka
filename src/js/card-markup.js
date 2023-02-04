@@ -11,11 +11,11 @@ export function markupFilm(films) {
             const date = new Date(release_date).getFullYear();
             if (poster_path) {
                 return `
-            <li class="filmCard" id="${id}" data-film=\"${filmData}\">
-            <img class="filmCard__img" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}" loading="lazy" />
-            <div class="card_wrap">
-            <p class="filmCard__title">${title.toUpperCase()} <br />
-            <span class="filmCard__info">${findGenresOfFilms(
+            <li class="film-card" id="${id}" data-film=\"${filmData}\">
+            <img class="film-card__img" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}" loading="lazy" />
+            <div class="card-wrap">
+            <p class="film-card__title">${title.toUpperCase()} <br />
+            <span class="film-card__info">${findGenresOfFilms(
                     genre_ids
                 )} | ${date}</span>
             </p>
@@ -23,11 +23,11 @@ export function markupFilm(films) {
             </li>`;
             }
             return `
-        <li class="filmCard" id="${id}" data-film=\"${filmData}\">
-        <img class ="filmCard__img" src="${img}" alt="${title.toUpperCase()}" />
-        <div class="card_wrap">
-        <p class ="filmCard__title">${title.toUpperCase()} <br/>
-        <p class ="filmCard__info"><span>${findGenresOfFilms(
+        <li class="film-card" id="${id}" data-film=\"${filmData}\">
+        <img class ="film-card__img" src="${img}" alt="${title.toUpperCase()}" />
+        <div class="card-wrap">
+        <p class ="film-card__title">${title.toUpperCase()} <br/>
+        <p class ="film-card__info"><span>${findGenresOfFilms(
                 genre_ids
             )} | ${date}</span>
         </p>

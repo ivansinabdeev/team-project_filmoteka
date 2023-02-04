@@ -2,8 +2,7 @@ import axios from 'axios';
 
 const refreshTrands = document.querySelector('.logo__link');
 const homeBtn = document.getElementById('home');
-console.log(refreshTrands)
-console.log(homeBtn)
+
 
 function refreshTrandsFoo() {
     localStorage.removeItem('page')
