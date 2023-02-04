@@ -28,6 +28,16 @@ export default class ApiService {
             .catch(error => console.log(error));
     }
 
+    //пошук трейлеру //
+    async fetchTrailer(id) {
+        const r = await axios
+            .get(`https://api.themoviedb.org/3/search/movie/${id}/videos?${this.key}&language=en-US`)
+            .then(res => res.data);
+        const trailer = res.results.filter(v => v.name === 'Official Trailer');
+        // console.log(trailer[0]);
+        return trailer[0];
+    }
+
     async fetchMovies() {
         sessionStorage.setItem('searchQuery', this.searchQuery);
         sessionStorage.setItem('page', this.page);
@@ -39,7 +49,7 @@ export default class ApiService {
         }
     }
 
-    // трендовые фильмы //
+    // трендові фільми //
     async fetchTrendMovies() {
         try {
             const url = `https://api.themoviedb.org/3/trending/movie/day?${this.key}&page=${this.page}`;
@@ -49,7 +59,7 @@ export default class ApiService {
             console.error(error);
         }
     }
-    //поиск по ключевому слову //
+    //пошук по ключовому слову //
     async fetchByKeyWord() {
         try {
             const url = `https://api.themoviedb.org/3/search/movie?${this.key}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
@@ -59,6 +69,7 @@ export default class ApiService {
             console.error(error);
         }
     }
+
 }
 
 export const fetchApi = new ApiService({
