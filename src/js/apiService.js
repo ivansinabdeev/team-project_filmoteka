@@ -1,5 +1,20 @@
 import axios from 'axios';
 
+const refreshTrands = document.querySelector('.logo__link');
+const homeBtn = document.getElementById('home');
+console.log(refreshTrands)
+console.log(homeBtn)
+
+function refreshTrandsFoo() {
+    localStorage.removeItem('page')
+    localStorage.removeItem('searchQuery')
+    sessionStorage.removeItem('page')
+    sessionStorage.removeItem('searchQuery')
+    fetchMovies()
+}
+
+refreshTrands.addEventListener('click', refreshTrandsFoo);
+if (homeBtn) homeBtn.addEventListener('click', refreshTrandsFoo);
 export default class ApiService {
     constructor(opt) {
         this.searchQuery = opt.searchQuery;
@@ -33,7 +48,7 @@ export default class ApiService {
         const r = await axios
             .get(`https://api.themoviedb.org/3/search/movie/${id}/videos?${this.key}&language=en-US`)
             .then(res => res.data);
-        const trailer = res.results.filter(v => v.name === 'Official Trailer');
+        const trailer = r.results.filter(v => v.name === 'Official Trailer');
         // console.log(trailer[0]);
         return trailer[0];
     }
