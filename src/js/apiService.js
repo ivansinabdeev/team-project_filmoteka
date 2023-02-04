@@ -76,6 +76,7 @@ export default class ApiService {
     }
     //пошук по ключовому слову //
     async fetchByKeyWord() {
+        console.log("fetchByKeyWord")
         try {
             const url = `https://api.themoviedb.org/3/search/movie?${this.key}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
             const response = await axios.get(url);
