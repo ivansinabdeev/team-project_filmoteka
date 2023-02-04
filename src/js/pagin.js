@@ -287,7 +287,7 @@ const options = {
     lastItemClassName: 'tui-last-child',
 };
 
-let pagination;
+export let pagination;
 if (container) {
     pagination = new Pagination(container, options);
 
