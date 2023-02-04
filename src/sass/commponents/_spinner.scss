@@ -1,3 +1,32 @@
+//preload
+
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  background-image: linear-gradient(
+    rgba(105, 1, 1, 0.4),
+    rgba(234, 229, 221, 0.4)
+  );
+
+  @media screen and (min-width: 768px) {
+    background-position: 54% 0%;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-position: 0% 10%;
+  }
+}
+
 .spinner__overlay {
   position: absolute;
   top: 30%;
@@ -14,33 +43,33 @@
 }
 
 .spinner__pic {
-  animation: spinner 1.7s linear infinite;
+  animation: spinner 1.2s linear infinite;
 }
 
 @keyframes spinner {
   0% {
-    transform: rotate(0deg);
+    transform: scale(0.5);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1);
   }
 }
 
-// .spinner__text {
-//   margin-top: 20px;
+.spinner__text {
+  margin-top: 20px;
 
-//   text-align: center;
+  text-align: center;
 
-//   @include text-design(500, 24px, calc(30 / 24), 0.03em);
+  @include text-design(500, 24px, calc(30 / 24), 0.03em);
 
-//   @media screen and (min-width: 768px) {
-//     @include text-design(700, 30px, calc(35 / 30), 0.03em);
-//   }
+  @media screen and (min-width: 768px) {
+    @include text-design(700, 30px, calc(35 / 30), 0.03em);
+  }
 
-//   @media screen and (min-width: 1280px) {
-//     @include text-design(700, 30px, calc(35 / 30), 0.03em);
-//   }
-// }
+  @media screen and (min-width: 1280px) {
+    @include text-design(700, 30px, calc(35 / 30), 0.03em);
+  }
+}
 
 //===================== ORANGE SPINNER ASYNC =============//
 
@@ -90,7 +119,7 @@
 }
 
 .spinner-backdrop {
-  background-color: rgb(157, 96, 96);
+  background-color: rgb(175, 44, 0);
   position: fixed;
   top: 0;
   left: 0;

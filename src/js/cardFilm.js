@@ -1,3 +1,5 @@
+import { playSpinner, stopSpinner } from "./spinner";
+
 function cardFilm() {   
   return `
  <img src="poster path" alt="movie-poster" />
