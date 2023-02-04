@@ -26,3 +26,21 @@
 @mixin link {
   text-decoration: none;
 }
+//spinner text
+@mixin text-design($fw, $fs, $lh, $ls) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+@mixin font($fw: 700, $fs: 14, $lh: 16) {
+  font-weight: $fw;
+  font-size: $fs + px;
+  line-height: calc($lh / $fs);
+}
+@mixin displayFlex($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+//spinner^

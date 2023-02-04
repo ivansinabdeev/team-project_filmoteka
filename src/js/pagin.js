@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import { fetchApi } from './apiService';
 import { markupFilm } from './card-markup';
+import { playSpinner, stopSpinner } from "./spinner";
 
 const container = document.getElementById('tui-pagination-container');
 

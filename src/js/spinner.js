@@ -1,21 +1,29 @@
+// window.addEventListener("load", () => {
+//   const loader = document.querySelector(".loader");
+//   loader.classList.add("loader-hidden");
+//   loader.addEventListener("transitionend", () => {
+//     document.body.removeChild(document.body.firstChild);
+//   })
+// }) 
+
 window.onload = function () {
   const preloader = document.querySelector('.spinner');
   setTimeout(function () {
     preloader.classList.add('visually-hidden');
-  }, 2000);
+  }, 555);
 };
 
 
-//===================== ORANGE SPINNER ASYNC =============//
+//spinner async
 
-// import { Spinner } from 'spin.js';
+import { Spinner } from 'spin.js';
 
 const opts = {
   lines: 13, // The number of lines to draw
   length: 38, // The length of each line
   width: 17, // The line thickness
   radius: 45, // The radius of the inner circle
-  scale: 1, // Scales overall size of the spinner
+  scale: 1.2, // Scales overall size of the spinner
   corners: 1, // Corner roundness (0..1)
   speed: 1, // Rounds per second
   rotate: 0, // The rotation offset
@@ -47,6 +55,3 @@ function stopSpinner() {
 }
 
 export { playSpinner, stopSpinner };
-
-
-
