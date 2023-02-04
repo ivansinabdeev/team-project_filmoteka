@@ -1,6 +1,7 @@
 const galleryEl = document.querySelector('.film-list');
 import { findGenresOfFilms } from './genres';
 import img from '../images/film_poster_not_found.png';
+import { playSpinner, stopSpinner } from "./spinner";
 
 export function markupFilm(films) {
     const markup = films
