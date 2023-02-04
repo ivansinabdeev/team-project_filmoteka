@@ -1,7 +1,7 @@
 // import Pagination from 'tui-pagination';
 // import { fetchApi, reloadPage } from './apiService';
 // import { markupFilm } from './card-markup';
-
+import { playSpinner, stopSpinner } from "./spinner";
 // const container = document.getElementById('tui-pagination-container');
 
 // const options = {
@@ -306,13 +306,15 @@ async function fetchMovies() {
     galleryEl.innerHTML = '';
 
     try {
+        playSpinner()
         const data = await fetchApi.fetchMovies();
         const movies = data.results;
         markupFilm(movies, galleryEl);
+        
     } catch (error) {
         console.error(error);
     }
-
+stopSpinner()
     isFetching = false;
 }
 
