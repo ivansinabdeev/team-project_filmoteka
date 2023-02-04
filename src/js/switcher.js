@@ -6,6 +6,7 @@ const moonIcon = document.querySelector('.moon');
 const sunIcon = document.querySelector('.sun');
 const footerThem = document.querySelector('.footer');
 const footerButtonThem = document.querySelector('.footer__button');
+const footerModal = document.querySelector('.team__modal');
 
 if (localStorage.getItem('darkMode') === null) {
   localStorage.setItem('darkMode', 'false');
@@ -35,6 +36,7 @@ function addDarkTheme() {
   document.body.classList.add('dark__theme');
   footerThem.classList.add('dark__theme');
   footerButtonThem.classList.add('dark__theme');
+  footerModal.classList.add('dark__theme');
 
   icon.classList.remove('fas', 'fa-sun');
   icon.classList.add('fa-solid', 'fa-moon', 'icon__dark');
@@ -51,6 +53,7 @@ function removeDarkTheme() {
   document.body.classList.remove('dark__theme');
   footerThem.classList.remove('dark__theme');
   footerButtonThem.classList.remove('dark__theme');
+  footerModal.classList.remove('dark__theme');
 
   icon.classList.remove('fa-solid', 'fa-moon', 'icon__dark');
   icon.classList.add('fas', 'fa-sun');
