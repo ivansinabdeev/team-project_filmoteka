@@ -5,3 +5,4 @@ import './js/switcher';
 import './js/apiService';
 import './js/card-markup';
 import './js/pagin';
+import './js/searchQuery';
