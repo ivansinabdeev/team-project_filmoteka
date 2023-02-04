@@ -5,8 +5,9 @@ import Notiflix from 'notiflix';
 import img from '../images/film_poster_not_found.png';
 
 const galleryEl = document.querySelector('.film-list');
-const searchFormEl = document.querySelector('input');
+const searchFormEl = document.querySelector('.header__form');
 console.log(searchFormEl)
+
 if (searchFormEl) searchFormEl.addEventListener('submit', onSearch);
 
 
@@ -58,3 +59,5 @@ async function onSearch(event) {
         console.error(error);
     }
 }
+
+
