@@ -6,7 +6,7 @@ import img from '../images/film_poster_not_found.png';
 
 const galleryEl = document.querySelector('.film-list');
 const searchFormEl = document.querySelector('.header__form');
-console.log(searchFormEl)
+
 
 if (searchFormEl) searchFormEl.addEventListener('submit', onSearch);
 
@@ -17,7 +17,7 @@ function renderNoFilm() {
     sessionStorage.removeItem('page');
     sessionStorage.removeItem('searchQuery');
     galleryEl.innerHTML = '';
-    galleryEl.insertAdjacentHTML('afterbegin', `<img class="movieCard__img" src="${img}" alt="no film found">`)
+    galleryEl.insertAdjacentHTML('afterbegin', `<img class="movie-card__img" src="${img}" alt="no film found">`)
 }
 
 
