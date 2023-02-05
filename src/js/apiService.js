@@ -85,6 +85,17 @@ export default class ApiService {
         }
     }
 
+    // пошук деталей фільму//
+    async getFilmDetails(id) {
+
+        try {
+            const url = `https://api.themoviedb.org/3/search/movie?${id}?${this.key}&language=en-US`;
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
 export const fetchApi = new ApiService({
