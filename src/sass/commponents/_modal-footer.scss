@@ -1,39 +1,24 @@
 .team__modal--close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
   text-decoration: none;
-  fill: #373737;
+  fill: var(--footerGrey);
   background: none;
-  transition-property: transform;
-  transition-duration: 500ms;
+  border: 1px solid var(--footerGrey);
+  border-radius: 50%;
+  padding: 4px;
+  transition-property: fill border-color;
+  transition-duration: 250ms;
+
+  box-shadow: 1px 0px 100px 20px var(--colorShadow);
 
   &:hover,
   &:focus {
-    transform: scale(1.4);
     fill: var(--accentTextColor);
-  }
-
-  @include tablet {
-    top: 15px;
-    right: 15px;
-
-    &:hover,
-    &:focus {
-      top: 15px;
-      right: 15px;
-      transform: scale(1.8);
-    }
-  }
-
-  @include desktop {
-    top: 20px;
-    right: 20px;
-
-    &:hover,
-    &:focus {
-      transform: scale(2);
-    }
+    border-color: var(--accentTextColor);
   }
 }
 
@@ -51,7 +36,7 @@
   top: 30px;
   margin: 0;
   padding: 7px;
-  background-color: white;
+  background-color: var(--secondaryLightThemeBgColor);
   transition: transform var(--timingFunction);
 
   @include tablet {
@@ -85,10 +70,7 @@
   }
 
   .team__shadow {
-    box-shadow: 10px 1px 800px 70px #ff5500b3,
-      1px 2px 4px 0px rgba(255, 85, 0, 0.7),
-      2px 4px 8px 0px rgba(255, 85, 0, 0.5),
-      2px 4px 16px 0px rgba(255, 85, 0, 0.5);
+    box-shadow: 10px 1px 800px 70px var(--colorShadow);
   }
 
   @include desktop {
@@ -164,8 +146,7 @@
 .team__photo {
   height: 80px;
   border-radius: 50%;
-
-  box-shadow: 2px 2px 10px 5px #49940c;
+  border: 2px solid green;
 
   @include tablet {
     height: 100px;
@@ -225,7 +206,7 @@
 .team__position {
   font-size: 15px;
   font-weight: 500;
-  color: #373737;
+  color: var(--footerGrey);
 
   @include desktop {
     font-size: 18px;
@@ -233,71 +214,78 @@
 }
 
 .team__circle {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
   background: transparent;
+  cursor: pointer;
   position: relative;
   z-index: 0;
-  filter: contrast(1.3);
-
-  &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    right: 40px;
-    bottom: 40px;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #84d120;
-    box-sizing: border-box;
-    z-index: 0;
-    transition: border-color 500ms;
-  }
-
-  &:hover {
-    cursor: pointer;
-    &::before {
-      animation: main-color 5s ease-in-out alternate infinite;
-    }
-    &::after {
-      animation: highlight-color 5s ease-in-out alternate infinite;
-    }
-  }
+  border-radius: 50%;
 }
 
-.animated {
-  animation: 20s bgPos ease-in-out infinite alternate;
+.team__circle:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(8px);
+  width: calc(100% + 7px);
+  height: calc(100% + 7px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
 }
 
-@keyframes bgPos {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 512px 512px;
-  }
+.team__circle:active {
+  color: #000;
 }
 
-@keyframes main-color {
-  from {
-    border-color: hsl(197, 100%, 50%);
-  }
-  40% {
-    border-color: hsl(50, 100%, 50%);
-  }
-  to {
-    border-color: hsl(0, 100%, 38%);
-  }
+.team__circle:active:after {
+  background: transparent;
 }
 
-@keyframes highlight-color {
-  from {
-    border-color: hsla(188, 100%, 89%, 0.6);
+.team__circle:hover:before {
+  opacity: 1;
+}
+
+.team__circle:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
   }
-  60% {
-    border-color: hsla(270, 100%, 89%, 0.6);
+  50% {
+    background-position: 400% 0;
   }
-  to {
-    border-color: hsla(54, 100%, 54%, 0.644);
+  100% {
+    background-position: 0 0;
   }
 }

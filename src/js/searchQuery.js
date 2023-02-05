@@ -3,6 +3,7 @@ import { markupFilm } from './card-markup';
 import { resetPagination, pagination } from './pagin';
 import Notiflix from 'notiflix';
 import img from '../images/film_poster_not_found.png';
+import { playSpinner, stopSpinner } from "./spinner";
 
 const galleryEl = document.querySelector('.film-list');
 const searchFormEl = document.querySelector('.header__form');
@@ -33,6 +34,7 @@ async function onSearch(event) {
     fetchApi.totalItems = Number(localStorage.getItem('total'));
 
     try {
+        playSpinner();
         const response = await fetchApi.fetchMovies();
         const films = response.results;
 
@@ -42,7 +44,7 @@ async function onSearch(event) {
         fetchApi.totalItems = Number(localStorage.getItem('total'));
 
         console.log('total-item:', response.total_results);
-
+stopSpinner();
         if (films.length === 0) {
             Notiflix.Notify.init({ width: '550px', position: 'right-top' });
             Notiflix.Notify.failure('Sorry, there is no movie with that name');

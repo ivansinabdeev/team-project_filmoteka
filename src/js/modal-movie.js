@@ -2,7 +2,6 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { MovieApi } from './movieApi';
-import { playSpinner, stopSpinner } from "./spinner";
 
 const movieApi = new MovieApi();
 
