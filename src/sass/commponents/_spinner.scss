@@ -1,5 +1,10 @@
 //preload
-
+.popcorn__gif {
+  scale: 0.3;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
 .spinner {
   position: fixed;
   top: 0;
@@ -14,8 +19,8 @@
   background-position: center;
 
   background-image: linear-gradient(
-    rgba(105, 1, 1, 0.4),
-    rgba(234, 229, 221, 0.4)
+    rgba(105, 1, 1, 0.7),
+    rgba(234, 229, 221, 0.7)
   );
 
   @media screen and (min-width: 768px) {
@@ -29,16 +34,20 @@
 
 .spinner__overlay {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   @media screen and (min-width: 768px) {
     transform: translate(-40%, -50%);
+
+    left: 45%;
   }
 
   @media screen and (min-width: 1280px) {
     transform: translate(-40%, -10%);
+    top: 100px;
+    left: 46%;
   }
 }
 
@@ -56,18 +65,21 @@
 }
 
 .spinner__text {
-  margin-top: 20px;
-
+  margin-top: 0px;
   text-align: center;
+  text-shadow: 3px 3px 5px rgb(43, 13, 13);
+  // margin-top: 100px;
 
   @include text-design(500, 24px, calc(30 / 24), 0.03em);
+  color: white;
 
   @media screen and (min-width: 768px) {
     @include text-design(700, 30px, calc(35 / 30), 0.03em);
   }
 
   @media screen and (min-width: 1280px) {
-    @include text-design(700, 30px, calc(35 / 30), 0.03em);
+    @include text-design(700, 90px, calc(35 / 30), 0.03em);
+    color: white;
   }
 }
 
