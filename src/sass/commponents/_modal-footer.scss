@@ -104,7 +104,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 30px;
 
   @include tablet {
     gap: 25px;
@@ -214,16 +214,21 @@
 }
 
 .team__circle {
-  width: 100%;
-  height: 100%;
+  width: 80px;
+  height: 80px;
   border: none;
   outline: none;
-  color: #fff;
+  color: transparent;
   background: transparent;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 50%;
+
+  @include tablet {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .team__circle:before {
@@ -245,7 +250,7 @@
   left: -2px;
   background-size: 400%;
   z-index: -1;
-  filter: blur(8px);
+  filter: blur(9px);
   width: calc(100% + 7px);
   height: calc(100% + 7px);
   animation: glowing 20s linear infinite;
@@ -255,7 +260,7 @@
 }
 
 .team__circle:active {
-  color: #000;
+  color: transparent;
 }
 
 .team__circle:active:after {
@@ -272,7 +277,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: transparent;
   left: 0;
   top: 0;
   border-radius: 50%;
