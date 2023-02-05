@@ -8,7 +8,8 @@ const galleryEl = document.querySelector('.film-list');
 const searchFormEl = document.querySelector('.header__form');
 
 
-if (searchFormEl) searchFormEl.addEventListener('submit', onSearch);
+// if (searchFormEl)
+searchFormEl.addEventListener('submit', onSearch);
 
 
 function renderNoFilm() {
