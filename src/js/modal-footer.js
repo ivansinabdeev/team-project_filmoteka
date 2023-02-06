@@ -8,12 +8,11 @@ refs.openModal.addEventListener('click', openModalTeam);
 refs.closeModal.addEventListener('click', closeModalTeam);
 
 function openModalTeam(event) {
-  if (refs.openModal.textContent === 'GoIT Students') {
-    refs.teamBackdrop.classList.remove('team__backdrop--hidden');
-    document.addEventListener('keydown', onEscapeClose);
-    document.addEventListener('click', onBackdropClose);
-    document.body.style.overflow = 'hidden';
-  }
+  refs.openModal.textContent === 'GoIT Students';
+  refs.teamBackdrop.classList.remove('team__backdrop--hidden');
+  document.addEventListener('keydown', onEscapeClose);
+  document.addEventListener('click', onBackdropClose);
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModalTeam(event) {

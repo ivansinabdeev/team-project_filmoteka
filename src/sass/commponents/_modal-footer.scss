@@ -1,24 +1,3 @@
-// .backdrop {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.644);
-//   z-index: 10;
-//   overflow-y: scroll;
-//   transition: all 0.8s ease 0s;
-// }
-
-// .team__backdrop--hidden {
-//   opacity: 0;
-//   pointer-events: none;
-// }
-
-////////
-///
-///
-
 .team__modal--close {
   position: absolute;
   top: 20px;
@@ -28,18 +7,14 @@
   text-decoration: none;
   fill: var(--footerGrey);
   background: none;
-  border: 1px solid var(--footerGrey);
-  border-radius: 50%;
   padding: 4px;
   transition-property: fill border-color;
   transition-duration: 250ms;
 
-  box-shadow: 1px 0px 100px 20px var(--colorShadow);
-
   &:hover,
   &:focus {
     fill: var(--accentTextColor);
-    border-color: var(--accentTextColor);
+    transform: rotate(360deg);
   }
 }
 
@@ -169,7 +144,7 @@
 .team__photo {
   height: 80px;
   border-radius: 50%;
-  border: 2px solid green;
+  border: 2px solid var(--secondaryTextColor);
 
   @include tablet {
     height: 100px;
@@ -321,23 +296,37 @@
 /////////////////////////////////////////
 // TRAILER FOR CARD
 // #f00
+
 .trailer__icon-youtube {
   margin-left: 10px;
   margin-right: 10px;
+
+  &:hover,
+  &:focus {
+    fill: #000;
+  }
 }
 
 .trailer__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 220px;
   height: 50px;
   border: 2px solid var(--secondaryTextColor);
   outline: none;
   font-weight: 700;
+  font-size: 18px;
   color: var(--secondaryTextColor);
-  background: #111;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
+}
+
+.trailer__button:hover,
+.trailer__button:focus {
+  color: #000;
 }
 
 .trailer__button:before {
@@ -354,6 +343,7 @@
     #ff00c8,
     #ff0000
   );
+  // color: #000;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -367,35 +357,6 @@
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-
-// .trailer__button:hover,
-// .trailer__button:focus {
-//   content: '';
-//   background: linear-gradient(
-//     45deg,
-//     #ff0000,
-//     #ff7300,
-//     #fffb00,
-//     #48ff00,
-//     #00ffd5,
-//     #002bff,
-//     #7a00ff,
-//     #ff00c8,
-//     #ff0000
-//   );
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-//   background-size: 400%;
-//   z-index: -1;
-//   filter: blur(5px);
-//   width: calc(100% + 4px);
-//   height: calc(100% + 4px);
-//   animation: glowing 20s linear infinite;
-//   opacity: 0;
-//   transition: opacity 0.3s ease-in-out;
-//   border-radius: 10px;
-// }
 
 .trailer__button:active {
   color: #000;
@@ -416,7 +377,9 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: transparent;
+  // color: #000;
+  filter: blur(5px);
   left: 0;
   top: 0;
   border-radius: 10px;
