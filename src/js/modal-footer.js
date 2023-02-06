@@ -1,17 +1,19 @@
 const refs = {
   openModal: document.querySelector('.js-open-modal-footer'),
   closeModal: document.querySelector('.js-close-modal-footer'),
-  teamBackdrop: document.querySelector('.team__backdrop'),
+  teamBackdrop: document.querySelector('.backdrop'),
 };
 
 refs.openModal.addEventListener('click', openModalTeam);
 refs.closeModal.addEventListener('click', closeModalTeam);
 
 function openModalTeam(event) {
-  refs.teamBackdrop.classList.remove('team__backdrop--hidden');
-  document.addEventListener('keydown', onEscapeClose);
-  document.addEventListener('click', onBackdropClose);
-  document.body.style.overflow = 'hidden';
+  if (refs.openModal.textContent === 'GoIT Students') {
+    refs.teamBackdrop.classList.remove('team__backdrop--hidden');
+    document.addEventListener('keydown', onEscapeClose);
+    document.addEventListener('click', onBackdropClose);
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 function closeModalTeam(event) {
