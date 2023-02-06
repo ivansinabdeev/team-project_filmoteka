@@ -190,7 +190,7 @@
 .team__name {
   font-size: 18px;
   font-weight: 600;
-  color: #252525;
+  color: var(--primaryTextDark);
 
   @include tablet {
     font-size: 19px;
