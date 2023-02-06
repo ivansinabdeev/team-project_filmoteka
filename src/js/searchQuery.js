@@ -1,6 +1,6 @@
 import { fetchApi } from './apiService';
 import { markupFilm } from './card-markup';
-import { resetPagination, pagination } from './pagin';
+import { resetPagination, pagination } from './pagination';
 import Notiflix from 'notiflix';
 import img from '../images/film_poster_not_found.png';
 import { playSpinner, stopSpinner } from "./spinner";
