@@ -1,18 +1,164 @@
+
+import Pagination from 'tui-pagination';
+import { fetchApi } from './apiService';
+import { markupFilm } from './card-markup';
 import { playSpinner, stopSpinner } from "./spinner";
 
 
 
+const container = document.getElementById('tui-pagination-container');
+container.classList.add('position');
+// const branch = document.querySelector('.tui-page-btn ');
+// branch.classList.add('pagination-li')
+const galleryEl = document.querySelector('.film-list');
+
+const options = {
+    totalItems: 20000,
+    itemsPerPage: 20,
+    visiblePages: 5,
+    centerAlign: true,
+    page: Number(localStorage.getItem('page') || 1),
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+    
+};
+
+export let pagination;
+if (container) {
+    pagination = new Pagination(container, options);
+
+    pagination.on('afterMove', event => {
+        fetchApi.page = event.page;
+        fetchMovies();
+    });
+}
+
+let isFetching = false;
+async function fetchMovies() {
+    if (isFetching) {
+        return;
+    }
+    isFetching = true;
+
+    galleryEl.innerHTML = '';
+
+    try {
+        const data = await fetchApi.fetchMovies();
+        const movies = data.results;
+        markupFilm(movies, galleryEl);
+    } catch (error) {
+        console.error(error);
+    }
+
+    isFetching = false;
+}
+
+export function resetPagination() {
+    pagination.reset();
+}
+
+const currentPage = document.querySelector('.tui-pagination');
+if (currentPage) currentPage.addEventListener('click', onPageClick);
+
+function onPageClick(event) {
+    const page = Number(event.target.textContent);
+    localStorage.setItem('page', page);
+}
+
+if (container) {
+    fetchMovies();
+}
 
 
 
 
-// import  getFilm  from './api/getFilm';
+
+
+
+
+
+
+
+
+
+
+// import { playSpinner, stopSpinner } from "./spinner";
+
+// // import Pagination from 'tui-pagination';
+// import { fetchApi, ApiService } from './apiService';
+// import { markupFilm } from './card-markup';
 
 // const element = document.querySelector(".pagination ul");
 // let totalPages = 20;
-// let page = 5;
-// //виклик функції з передачею параметрів і додаванням внутрішнього елемента, який є тегом ul
-// element.innerHTML = createPagination(totalPages, page);
+// let page = 1;
+
+
+// const container = document.getElementById('tui-pagination-container');
+// const galleryEl = document.querySelector('.film-list');
+
+
+//         if (!totalHits || totalHits <= getFilm.perPage) {
+//             refs.paginationBox.classList.add('is-hidden');
+//             return;
+//         }
+// element.innerHTML = onPageClick(totalPages, page);
+// function onPageClick(event) {
+//     // if ()
+//     // fetchApi()
+//     let liTag = '';
+//     let active;
+//     let beforePage = page - 1;
+//     let afterPage = page + 1;
+//     if(page > 1){ //показати наступну кнопку, якщо значення сторінки більше 1
+//       liTag += `<li class="btn prev"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+//     }
+//     if(page > 2){ //якщо значення сторінки менше 2, додайте 1 після попередньої кнопки
+//       liTag += `<li class="first numb"><span>1</span></li>`;
+//       if(page > 3){ //якщо значення сторінки більше 3, додайте це (...) після першої li або сторінки
+//         liTag += `<li class="dots"><span>...</span></li>`;
+//       }
+//     }
+//     // скільки сторінок або li відображається перед поточним li
+//     if (page == totalPages) {
+//       beforePage = beforePage - 2;
+//     } else if (page == totalPages - 1) {
+//       beforePage = beforePage - 1;
+//     }
+//      // скільки сторінок або li відображається після поточного li
+//     if (page == 1) {
+//       afterPage = afterPage + 2;
+//     } else if (page == 2) {
+//       afterPage  = afterPage + 1;
+//     }
+//     for (var plength = beforePage; plength <= afterPage; plength++) {
+//       if (plength > totalPages) { //якщо довжина перевищує загальну довжину сторінки, продовжуй
+//         continue;
+//       }
+//       if (plength == 0) { //якщо довжина дорівнює 0, додайте +1 до значення довжини
+//         plength = plength + 1;
+//       }
+//       if(page == plength){ //якщо сторінка дорівнює довжині, признач активний рядок в активній змінній
+//         active = "active";
+//       }else{ //інакше залиш порожнім активну змінну
+//         active = "";
+//       }
+//       liTag += `<li class="numb ${active}"><span>${plength}</span></li>`;
+//     }
+//     if(page < totalPages - 1){ //якщо значення сторінки менше значення totalPage на -1, тоді показується остання li або сторінка
+//       if(page < totalPages - 2){ //якщо значення сторінки менше значення totalPage на -2, додайте це (...) перед останньою сторінкою li
+//         liTag += `<li class="dots"><span>...</span></li>`;
+//       }
+//       liTag += `<li class="last numb"><span>${totalPages}</span></li>`;
+//     }
+//     if (page < totalPages) { //показати наступну кнопку, якщо значення сторінки менше totalPage(20)
+//       liTag += `<li class="btn next" ><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+//     }
+//     element.innerHTML = liTag; //додай тег li в тег ul
+//     return liTag; 
+// }
+
+// виклик функції з передачею параметрів і додаванням внутрішнього елемента, який є тегом ul
+
 // function createPagination(totalPages, page){
 //   let liTag = '';
 //   let active;
@@ -67,10 +213,8 @@ import { playSpinner, stopSpinner } from "./spinner";
   
 
 // }
-// getFilm().then(res => {
-//   totalPages = res.total_pages;
-//   createPagination(totalPages, 5);
-// })
+
+
 
 
 
@@ -242,7 +386,7 @@ import { playSpinner, stopSpinner } from "./spinner";
 
 //     if (page < totalPages){//показати наступну кнопку, якщо значення сторінки менше totalPage(20)
 //         liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
-//     }
+// }
 //     element.innerHTML = liTag;
 //     return liTag;
 // }
@@ -261,7 +405,7 @@ import { playSpinner, stopSpinner } from "./spinner";
 // import { getFilm } from './api/getFilm';
 
 // async function main() {
-//     const postsData = await getFilm();
+//     const postsData = await ApiService();
 //     let currentPage = 1;
 //     let rows = 7;
   
