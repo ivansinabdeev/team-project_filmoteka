@@ -4,7 +4,7 @@ import './js/switcher';
 import './js/spinner';
 import './js/apiService';
 import './js/card-markup';
-// import './js/pagin';
+
 import './js/searchQuery';
 import './js/backToTopButton';
 import './js/header';
