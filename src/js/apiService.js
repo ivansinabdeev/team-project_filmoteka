@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const refreshTrands = document.querySelector('.logo__link');
+const refreshTrands = document.querySelector('.header__logo');
 const homeBtn = document.getElementById('home');
 
 
