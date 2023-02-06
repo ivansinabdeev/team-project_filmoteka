@@ -41,13 +41,14 @@ async function fetchMovies() {
     galleryEl.innerHTML = '';
 
     try {
+        playSpinner()
         const data = await fetchApi.fetchMovies();
         const movies = data.results;
         markupFilm(movies, galleryEl);
     } catch (error) {
         console.error(error);
     }
-
+stopSpinner()
     isFetching = false;
 }
 

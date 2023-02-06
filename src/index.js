@@ -7,3 +7,4 @@ import './js/card-markup';
 
 import './js/searchQuery';
 import './js/backToTopButton';
+import './js/header';
