@@ -1,73 +1,66 @@
-
-.position{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // padding-top: 60px;
-    padding-bottom: 40px;
-    // border-radius: 50px;
-    // gap: 8px;
+.position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // padding-top: 60px;
+  padding-bottom: 40px;
+  // border-radius: 50px;
+  // gap: 8px;
 }
 
 .tui-page-btn {
-    color: var(--accentBtnColor);
-    line-height: 45px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 500;
-    cursor:pointer ;
+  color: var(--accentBtnColor);
+  line-height: 45px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
 
-    margin-right: 10px;
-    height: 40px;
-    width: 40px;
-    margin: 0 3px;
-    border-radius: 5px;
-    transition: var(--timingFunction);
-    
-  
-    &:hover {
-      background-color: #ff6b01;
-      color: var(--secondaryLightThemeBgColor);
-      transform: scale(1.15);
-    }
-  }
-  
- .tui-is-selected {
-    border: 1px solid #ff6b02;
-    background-color: #ff6b02;
+  margin-right: 10px;
+  height: 40px;
+  width: 40px;
+  margin: 0 3px;
+  border-radius: 5px;
+  transition: var(--timingFunction);
+
+  &:hover {
+    background-color: #ff6b01;
     color: var(--secondaryLightThemeBgColor);
-    transition: var(--timingFunction);
-    &:hover {
-      background-color: #ff6b01;
-    }
+    transform: scale(1.15);
   }
+}
 
-  .tui-first, .tui-last {
-    border: 1px solid #ff6b02;
+.tui-is-selected {
+  border: 1px solid #ff6b02;
+  background-color: #ff6b02;
+  color: var(--secondaryLightThemeBgColor);
+  transition: var(--timingFunction);
+  &:hover {
+    background-color: #ff6b01;
   }
-  
-  
+}
+
+.tui-first,
+.tui-last {
+  border: 1px solid #ff6b02;
+}
+
 //   .tui-pagination .tui-is-selected {
 //     border: 2px solid #ff6b02;
 //     color: var(--secondaryLightThemeBgColor);
 //   }
-  
+
 //   .tui-is-selected {
 //     border: 2px solid #ff6b02;
 //   }
-  
+
 //   .tui-pagination .tui-first-child.tui-is-selected {
 //     border: 2px solid #ff6b02;
 //   }
-  
+
 //   .darkmode .tui-pagination .tui-is-selected {
 //     border: 2px solid $darkmode-color-two;
 //   }
-
-
-
-
-
 
 // // .pagination ul{
 // //     display: flex;
@@ -107,8 +100,6 @@
 //     border-radius: 25px 5px 5px 25px;
 
 // }
-
-
 
 // ====================
 // .position{
@@ -158,21 +149,16 @@
 
 // }
 
-.pagination ul li.next{
-    border-radius: 5px 25px 25px 5px;
+.pagination ul li.next {
+  border-radius: 5px 25px 25px 5px;
 }
 
 .pagination ul li.active,
 .pagination ul li.numb:hover,
-.pagination ul li.btn:hover{
-    color: var(--primaryTextLight);
-    background: var(--accentTextColor);
+.pagination ul li.btn:hover {
+  color: var(--primaryTextLight);
+  background: var(--accentTextColor);
 }
-
-
-
-
-
 
 // .pagination {
 //     display: flex;
