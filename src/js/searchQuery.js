@@ -44,7 +44,7 @@ async function onSearch(event) {
         fetchApi.totalItems = Number(localStorage.getItem('total'));
 
         console.log('total-item:', response.total_results);
-stopSpinner();
+        stopSpinner();
         if (films.length === 0) {
             Notiflix.Notify.init({ width: '550px', position: 'right-top' });
             Notiflix.Notify.failure('Sorry, there is no movie with that name');
