@@ -1,66 +1,65 @@
-<div class="modal-auth modal modal1" data-modal="1">
-    <div class="modal-auth__container">
-        <div class="modal-auth__box-line">
-            <ul class="modal-auth__list">
-                <li><button class="modal-auth__btn sing-in " tupe="button">
-                        SING IN
-                    </button></li>
-                <li><button class="modal-auth__btn registr" type="button">
-                        REGISTRATION
-                    </button></li>
-            </ul>
-        </div>
-        <form class="auth-form">
-            <label for="name">
-                <input class="auth-form__input auth-form__input-name" type="text" type="name" name="username"
-                    placeholder="name" required hidden>
-            </label>
-            <label for="email">
-                <input class="auth-form__input auth-form__input-email" type="email" name="email" placeholder="e-mail"
-                    required />
-            </label>
-
-            <label for="password">
-                <input class="auth-form__input auth-form__input-password " type="password" name="password" minlength="6"
-                    maxlength="10" placeholder="password" required />
-                <svg class="icon-eye show-pswd hidden-tab" width="28" height="28">
-                    <use href="./images/symbol-defs.svg#icon-eye"></use>
-                </svg>
-                <svg class="icon-eye hide-pswd" width="20" height="20">
-                    <use href="./images/symbol-defs.svg#icon-eye-blocked"></use>
-                </svg>
-            </label>
-
-
-            <p class="auth-form__text" hidden>
-                By clicking Registration button, you are indicating that you have read
-                and agree to the
-                <a class="auth-form__link" href="https://www.google.com.ua/">Terms of Use</a>
-                and
-                <a class="auth-form__link" href="https://www.google.com.ua/">Privacy Policy</a>.
-            </p>
-            <button class="auth-form__button btn-accent" type="submit">
-                Sign In
-            </button>
-        </form>
-        <div class="auth-form__autorization">
-            <button class="auth-form__button-google " aria-label="sign in with google" type="button">
-                <svg width="25" height="25">
-                    <use href="./images/symbol-defs.svg#icon-google"></use>
-                </svg>
-                &nbspSign in with Goodle
-            </button>
-        </div>
-        <button class="modal-auth__btn-close js-modal-close" type="button">
-            <svg width="20" height="20">
+<!-- <div class="auth-modal backdrop is-hidden">
+    <div class="auth-modal-container">
+        <button class="auth-modal__close-btn" data-auth-close>
+            <svg width="30px" height="30px">
                 <use href="./images/symbol-defs.svg#icon-close"></use>
             </svg>
         </button>
+        <form class="auth-form" autocomplete="off">
+            <label class="auth-form__label">
+                Email
+                <input type="email" class="auth-form__input" name="email" required />
+            </label>
+            <label class="auth-form__label">
+                Password
+                <input type="password" class="auth-form__input" name="password" required />
+            </label>
+
+            <div class="auth-form-buttons">
+                <button type="submit" class="auth-form-button" data-auth-login>
+                    Log In
+                </button>
+                <button type="button" class="auth-form-button auth-register" data-auth-register>
+                    Register
+                </button>
+            </div>
+        </form>
+        <button class="auth-google-btn" data-auth-google>
+            <svg class="auth-google-btn__icon" width="18px" height="18px">
+                <use href="./images/symbol-defs.svg#icon-google"></use>
+            </svg>
+            <span class="auth-google-btn__text">Sign in with Google</span>
+        </button>
     </div>
-</div>
-
-<!-- <button type="button" class=" js-open-modal" data-modal="1">
-   
+</div> -->
+<!-- 
+<ul class="navigation-buttons">
+    <li class="js-signIn-btn">
+        <button class="navigation-btn">
+            <svg width="16" height="16">
+                <use href="#"></use>
+            </svg>
+            &nbsp; Sign In
+        </button>
+    </li>
+    <li class="js-signOut-btn visually-hidden">
+        <button class="navigation-btn">
+            Sign Out &nbsp;
+            <svg width="16" height="16">
+                <use href="#"></use>
+            </svg>
+        </button>
+    </li>
+</ul>
+<p class="js-userStatus userStatus">Hello, user</p>
+<button class="filters-show-button js-filterShow-btn" type="submit">
+    <svg class="filters-show-button__icon">
+        <use href="#"></use>
+    </svg>
 </button> -->
-
-<!-- vaf vaf -->
+<!-- <li class="nav-list__item">
+        <a href="#" class="nav-list__link" data-auth-open>Login</a>
+      </li>
+      <li class="nav-list__item hidden">
+        <a href="#" class="nav-list__link" data-auth-sign-out> Sign out</a>
+      </li> -->
