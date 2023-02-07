@@ -12,4 +12,7 @@ import './js/modal-auth';
 import './js/refs';
 import './js/localStorage';
 import './js/modal-movie';
-import './js/watch-trailer';
+// import './js/watch-trailer';
+import './js/saveBtn';
+import './js/addToStorage';
+import './js/my-library';
