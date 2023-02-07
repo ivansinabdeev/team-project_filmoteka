@@ -51,6 +51,28 @@ body.dark__theme .team__modal {
   box-shadow: 0px 1px 38px 12px var(--colorShadow);
 }
 
+body.dark__theme .modal-window {
+  background-color: var(--secondDarkBgColor);
+  box-shadow: 0px 1px 38px 12px var(--colorShadow);
+  color: var(--primaryTextLight);
+}
+
+body.dark__theme .read-more {
+  background-color: var(--secondDarkBgColor);
+
+  &::before {
+    color: var(--primaryTextLight);
+  }
+}
+
+body.dark__theme .card-title {
+  color: var(--primaryTextLight);
+}
+
+body.dark__theme .card-btn {
+  border: 2px solid var(--secondaryTextColor);
+}
+
 body.dark__theme .team__name {
   color: var(--primaryTextLight);
 }
