@@ -1,4 +1,4 @@
-import { findGenresOfMovie } from './genres';
+// import { findGenresOfFilms } from './genres';
 import img from '../images/film_poster_not_found.png';
 import { fetchApi } from './apiService';
 
