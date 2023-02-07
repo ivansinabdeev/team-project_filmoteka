@@ -5,15 +5,21 @@ import { markupFilm } from './card-markup';
 import { playSpinner, stopSpinner } from "./spinner";
 
 
-
+const firstBtn = document.querySelector('.tui-first');
+const lastBtn = document.querySelector('.tui-last ');
+const prevBtn = document.querySelector('.tui-prev');
+const nextBtn = document.querySelector('.tui-next');
 const container = document.getElementById('tui-pagination-container');
 container.classList.add('position');
 const galleryEl = document.querySelector('.film-list');
 
+export let pagination;
+let isFetching = false;
+
 const options = {
     totalItems: 20000,
     itemsPerPage: 20,
-    visiblePages: 5,
+    visiblePages: 3,
     centerAlign: true,
     page: Number(localStorage.getItem('page') || 1),
     firstItemClassName: 'tui-first-child',
@@ -21,7 +27,7 @@ const options = {
     
 };
 
-export let pagination;
+
 if (container) {
     pagination = new Pagination(container, options);
 
@@ -31,7 +37,7 @@ if (container) {
     });
 }
 
-let isFetching = false;
+
 async function fetchMovies() {
     if (isFetching) {
         return;
@@ -68,4 +74,10 @@ if (container) {
     fetchMovies();
 }
 
+function notActive (itemsPerPage) {
+    if (itemsPerPage <= 20){
+        firstBtn.classList.add('visually-hidden');
+        lastBtn.classList.add('visually-hidden')
+    }
+}
 
