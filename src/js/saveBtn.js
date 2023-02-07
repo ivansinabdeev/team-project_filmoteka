@@ -47,7 +47,7 @@ function onQueueClick(e) {
     Notify.success('The movie has been successfully added to your queue list');
     return;
   }
-  console.log(filmObj.id);
+ 
   const exist = queueArr.some(film => film.id === filmObj.id);
 
   if (!exist) {
