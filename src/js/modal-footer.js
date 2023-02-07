@@ -1,7 +1,7 @@
 const refs = {
   openModal: document.querySelector('.js-open-modal-footer'),
   closeModal: document.querySelector('.js-close-modal-footer'),
-  teamBackdrop: document.querySelector('.backdrop'),
+  teamBackdrop: document.querySelector('.backdrop-footer'),
 };
 
 refs.openModal.addEventListener('click', openModalTeam);
