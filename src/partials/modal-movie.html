@@ -1,10 +1,79 @@
-<div class="backdrop is-hidden">
-  <div class="modal-card">
-    <button type="button" class="modal-card-close">
-      <svg class="modal-card-close__icon" width="30px" height="30px">
-        <use href="./images/symbol-defs.svg#icon-close"></use>
-      </svg>
+<!-- <div class="backdrop_modal_film is-hidden" data-modal>
+  <div class="modal_film">
+    <button type="button" class="close-modal">
+      <img
+        src="./images/symbol-defs.svg#icon-close"
+        width="14"
+        height="14"
+        alt="close"
+        class="close-icon"
+      />
     </button>
-    <div class="modal-card-content" data-modal></div>
+    <div class="modal-conteiner"></div>
+  </div>
+</div> -->
+
+<div class="overlay is-hidden">
+  <div class="overlay-bg"></div>
+  <div class="overlay-scroll">
+    <div class="modal-window">
+      <div class="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" src="./images/symbol-defs.svg#icon-close">
+          <path d="M8 8L22 22" stroke-width="2" />
+          <path d="M8 22L22 8" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="cinema-card">
+        <img class="card-photo"
+          src="https://avatars.mds.yandex.net/get-kinopoisk-image/4716873/86af9282-6384-4b4c-b5ee-0749823241c7/300x450"
+          alt="movie cover" />
+      </div>
+      <div class="card-block">
+        <p class="card-title">A FISTFUL OF LEAD</p>
+        <div class="filter-list">
+          <div class="filter-item">
+            <p class="text-description">Vote / Votes</p>
+            <p class="text-field">
+              <span class="text-filed-rate" id="modal-vote">7.3</span> /
+              <span class="text-field-total" id="modal-votes">1260</span>
+            </p>
+          </div>
+          <div class="filter-item">
+            <p class="text-description">Popularity</p>
+            <p class="text-field" id="modal-popularity">100.2</p>
+          </div>
+          <div class="filter-item">
+            <p class="text-description">Original Title</p>
+            <p class="text-field" id="modal-original">A FISTFUL OF LEAD</p>
+          </div>
+          <div class="filter-item">
+            <p class="text-description">Genre</p>
+            <p class="text-field" id="modal-genre">Western</p>
+          </div>
+        </div>
+        <div class="card-descriotion">
+          <p class="text-title">About</p>
+          <p class="text-content">
+            <span id="modal-content" class="md-modal-content"></span>
+            <span id="modal-less" class="modal-less"></span>
+            <span class="read-more">Read More</span>
+          </p>
+        </div>
+        <div class="card-button">
+          <button class="card-btn" id="addToWatchedBtn" type="submit">
+            add to Watched
+          </button>
+          <button class="card-btn card-btn-delete" type="submit">
+            remove from Watched
+          </button>
+          <button class="card-btn" id="addToQueuedBtn" type="submit">
+            add to Queue
+          </button>
+          <button class="card-btn card-btn-delete-queued" id="removeFromQueuedBtn" type="submit">
+            remove from Queue
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
