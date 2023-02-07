@@ -8,7 +8,6 @@ refs.openModal.addEventListener('click', openModalTeam);
 refs.closeModal.addEventListener('click', closeModalTeam);
 
 function openModalTeam(event) {
-  refs.openModal.textContent === 'GoIT Students';
   refs.teamBackdrop.classList.remove('team__backdrop--hidden');
   document.addEventListener('keydown', onEscapeClose);
   document.addEventListener('click', onBackdropClose);
