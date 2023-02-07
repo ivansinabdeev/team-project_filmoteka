@@ -11,3 +11,4 @@ import './js/firebase';
 import './js/modal-auth';
 import './js/refs';
 import './js/localStorage';
+import './js/modal-movie';
