@@ -1,94 +1,4 @@
 
-// .position{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding-bottom: 40px;
-     
-// }
-
-// .tui-page-btn {
-//     color: var(--accentBtnColor);
-//     line-height: 39px;
-//     text-align: center;
-//     font-size: 13px;
-//     font-weight: 500;
-//     cursor:pointer ;
-//     margin-right: 15px;
-//     height: 40px;
-//     width: 40px;
-//     border-radius: 5px;
-//     transition: var(--timingFunction);
-      
-//     &:hover,
-//     &:focus {
-//       background-color: #ff6b01;
-//       color: var(--secondaryLightThemeBgColor);
-//       transform: scale(1.15);
-//       box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
-//       rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
-//     }
-//   }
-  
-//  .tui-is-selected {
-//     border: 1px solid #ff6b02;
-//     background-color: #ff6b02;
-//     color: var(--secondaryLightThemeBgColor);
-//     transition: var(--timingFunction);
-//     &:hover,
-//     &:focus  {
-//       background-color: #ff6b01;
-//     }
-//   }
-
-//   .tui-first, .tui-last {
-//     border: 1px solid #ff6b02;
-//     font-size: 15px;
-//     font-weight: 550;
-
-//   }
-  
-//   .tui-pagination .tui-ico-ellip{
-//     font-size: 20px;
-//     font-weight: 680;
-    
-//   }
-
-//   .tui-ico-prev{
-//     width: 31px;
-//     background-position: -26px 0px;
-//     background: url(../images/pag_arrow/arrow-left-org.png)no-repeat 0 0;
-//     display: inline-block;
-//     vertical-align: middle;
-//     font-size: 0px;
-//     margin-top: 9px;
-//     margin-left: 3px;
-//     &:hover,
-//     &:focus  {
-//       background: url(../images/pag_arrow/arrow-left-lite.png)no-repeat 0 0;
-//     }
-//   }
-
-//   .tui-ico-next{
-//     width: 31px;
-//     background-position: -26px 0px;
-//     background: url(../images/pag_arrow/arrow-right-org.png)no-repeat 0 0;
-//     display: inline-block;
-//     vertical-align: middle;
-//     font-size: 0px;
-//     margin-top: 9px;
-//     margin-left: 7px;
-//     display: inline-block;
-//     vertical-align: middle;
-//     font-size: 0px;
-//     &:hover,
-//     &:focus  {
-//       background: url(../images/pag_arrow/arrow-right-lite.png)no-repeat 0 0;
-//     }
-//   }
-
-
-// ------------Librery----------
  
 @charset 'utf-8';
 .tui-pagination * {
@@ -103,10 +13,7 @@
 }
 
 .tui-pagination {
-    // height: 28px;
-    // margin: 14px 0 12px;
-    // line-height: normal;
-    // text-align: center;
+  
     font-size: 0;
     display: flex;
     align-items: center;
@@ -291,21 +198,12 @@
       }
 }
 
-// .tui-pagination .tui-next {
-//     margin-left: 10px;
-// }
 
 .tui-pagination .tui-ico-first {
-    // position: absolute;
+    
     width: 1px;
     height: 1px;
-    // margin: -1px;
-    // border: 0;
-    // padding: 0;
-    // white-space: nowrap;
-    // clip-path: inset(100%);
-    // clip: rect(0 0 0 0);
-    // overflow: hidden;
+   
     @include tablet {
         width: 11px;
         height: 10px;
@@ -326,16 +224,10 @@
 }
 
 .tui-pagination .tui-ico-last {
-    // position: absolute;
+ 
     width: 1px;
     height: 1px;
-    // margin: -1px;
-    // border: 0;
-    // padding: 0;
-    // white-space: nowrap;
-    // clip-path: inset(100%);
-    // clip: rect(0 0 0 0);
-    // overflow: hidden;
+    /
     @include tablet {
         width: 11px;
         height: 10px;

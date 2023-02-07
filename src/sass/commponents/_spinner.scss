@@ -33,22 +33,26 @@
 }
 
 .spinner__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: absolute;
-  top: 20%;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media screen and (min-width: 768px) {
-    transform: translate(-40%, -50%);
+  // @media screen and (min-width: 768px) {
+  //   transform: translate(-40%, -50%);
 
-    left: 45%;
-  }
+  //   left: 45%;
+  // }
 
-  @media screen and (min-width: 1280px) {
-    transform: translate(-40%, -10%);
-    top: 100px;
-    left: 46%;
-  }
+  // @media screen and (min-width: 1280px) {
+  //   transform: translate(-40%, -10%);
+  //   top: 100px;
+  //   left: 46%;
+  // }
 }
 
 .spinner__pic {
@@ -78,12 +82,12 @@
   }
 
   @media screen and (min-width: 1280px) {
-    @include text-design(700, 90px, calc(35 / 30), 0.03em);
+    @include text-design(700, 55px, calc(35 / 30), 0.03em);
     color: white;
   }
 }
 
-//===================== ORANGE SPINNER ASYNC =============//
+//async spinner
 
 @keyframes spinner-line-fade-more {
   0%,
@@ -99,7 +103,7 @@
   0%,
   39%,
   100% {
-    opacity: 0.25; /* minimum opacity */
+    opacity: 0.5; /* minimum opacity */
   }
   40% {
     opacity: 1;
@@ -109,7 +113,7 @@
 @keyframes spinner-line-fade-default {
   0%,
   100% {
-    opacity: 0.22; /* minimum opacity */
+    opacity: 0.5; /* minimum opacity */
   }
   1% {
     opacity: 1;
@@ -122,7 +126,7 @@
   100% {
     /* minimum scale and opacity */
     transform: scale(0.5);
-    opacity: 0.25;
+    opacity: 0.5;
   }
   26% {
     transform: scale(1);
