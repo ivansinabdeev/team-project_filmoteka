@@ -2,14 +2,14 @@
   "name": "team-project_filmoteka",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://ivansinabdeev.github.io/team-project-filmoteka",
+  "homepage": "https://ivansinabdeev.github.io/team-project_filmoteka",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /team-project-filmoteka/"
+    "build": "parcel build src/*.html --public-url /team-project_filmoteka/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivansinabdeev/team-project-filmoteka.git"
+    "url": "git+https://github.com/ivansinabdeev/team-project_filmoteka.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
