@@ -1,15 +1,15 @@
 {
-  "name": "filmoteka",
+  "name": "team-project_filmoteka",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://TommoBosha.github.io/filmoteka",
+  "homepage": "https://ivansinabdeev.github.io/team-project_filmoteka",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /filmoteka/"
+    "build": "parcel build src/*.html --public-url /team-project_filmoteka/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TommoBosha/filmoteka.git"
+    "url": "git+https://github.com/ivansinabdeev/team-project_filmoteka.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
